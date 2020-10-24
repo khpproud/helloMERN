@@ -1,22 +1,22 @@
-const monggose = require('mongoose');
+const mongoose = require('mongoose');
 
-const userSchema = monggose.Schema({
+const userSchema = mongoose.Schema({
     name: {
         type: String,
         maxLength: 50
-    }, 
+    },
     email: {
         type: String,
         trim: true,
-        unique: true,
+        unique: true
     },
     password: {
         type: String,
-        minLength: 5,
+        minLength: 5
     },
     lastname: {
         type: String,
-        maxLength: 50,
+        maxLength: 50
     },
     role: {
         type: Number,
@@ -24,13 +24,13 @@ const userSchema = monggose.Schema({
     },
     image: String,
     token: {
-        type: String,
+        type: String
     },
     tokenExp: {
         type: Number
     }
 })
 
-const User = monngose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
 
 module.exports = { User }
